@@ -23,7 +23,7 @@ const raceResults = [
 	{ position: 22, name: "Valtteri Bottas", code: "BOT", team: "Cadillac", color: "sand", gap: "DNF", points: 0 }
 ];
 
-const qualifyingResults = [
+const qualifyingRows = [
 	["Lando Norris", "McLaren", "papaya"], ["George Russell", "Mercedes", "teal"], ["Kimi Antonelli", "Mercedes", "teal"],
 	["Charles Leclerc", "Ferrari", "red"], ["Liam Lawson", "Racing Bulls", "periwinkle"], ["Nico Hülkenberg", "Audi", "orange"],
 	["Isack Hadjar", "Red Bull Racing", "blue"], ["Oliver Bearman", "Haas", "silver"], ["Fernando Alonso", "Aston Martin", "green"],
@@ -32,7 +32,22 @@ const qualifyingResults = [
 	["Max Verstappen", "Red Bull Racing", "blue"], ["Franco Colapinto", "Alpine", "pink"], ["Pierre Gasly", "Alpine", "pink"],
 	["Lance Stroll", "Aston Martin", "green"], ["Valtteri Bottas", "Cadillac", "sand"], ["Sergio Pérez", "Cadillac", "sand"],
 	["Gabriel Bortoleto", "Audi", "orange"]
-].map(([name, team, color], index) => ({ position: index + 1, name, team, color }));
+];
+const qualifyingLapTimes = {
+	q1: ["1:30.939", "1:31.206", "1:32.229", "1:32.121", "1:32.085", "1:31.693", "1:32.059", "1:33.030", "1:32.092", "1:33.150", "1:31.666", "1:32.251", "1:32.809", "1:32.306", "1:32.959", "1:31.238", "1:33.327", "1:33.449", "1:33.653", "1:33.774", "1:34.509", "1:41.564"],
+	q2: ["1:29.207", "1:26.745", "1:29.302", "1:28.082", "1:27.049", "1:28.361", "1:27.218", "1:29.130", "1:29.072", "1:28.918", "1:30.001", "1:30.369", "1:31.515", "1:31.687", "1:31.785", null],
+	q3: ["1:27.470", "1:27.674", "1:28.095", "1:28.289", "1:28.321", "1:28.668", "1:28.763", "1:29.831", "1:30.311", "1:30.456"]
+};
+const qualifyingResults = qualifyingRows.map(([name, team, color], index) => ({
+	position: index + 1,
+	name,
+	team,
+	color,
+	q1: qualifyingLapTimes.q1[index],
+	q2: qualifyingLapTimes.q2[index] ?? "—",
+	q3: qualifyingLapTimes.q3[index] ?? "—",
+	status: index >= 16 ? "VYPADOL V Q1" : index >= 10 ? "VYPADOL V Q2" : "POSTÚPIL DO Q3"
+}));
 
 const sprintResults = [
 	["Max Verstappen", "Red Bull Racing", "blue"], ["Lewis Hamilton", "Ferrari", "red"], ["Charles Leclerc", "Ferrari", "red"],
@@ -71,6 +86,7 @@ const constructorStandings = [
 const formattedPosition = (position) => String(position).padStart(2, "0");
 const raceRow = ({ position, name, code, team, color, gap, points }) => `<tr><td class="rank${position === 1 ? " winner" : ""}">${formattedPosition(position)}</td><td><b>${name}</b><small class="code">${code}</small></td><td><i class="dot ${color}"></i> ${team}</td><td>${gap}</td><td class="num points">${points}</td></tr>`;
 const sessionTable = (rows) => `<table class="session-table"><thead><tr><th>POS.</th><th>JAZDEC</th><th>TÍM</th></tr></thead><tbody>${rows.map(({ position, name, team, color }) => `<tr><td class="rank${position === 1 ? " winner" : ""}">${formattedPosition(position)}</td><td><b>${name}</b></td><td><i class="dot ${color}"></i> ${team}</td></tr>`).join("")}</tbody></table>`;
+const qualifyingTable = (rows) => `<table class="session-table qualification-table"><thead><tr><th>POS.</th><th>JAZDEC</th><th>TÍM</th><th class="num">Q1</th><th class="num">Q2</th><th class="num">Q3</th><th>STAV</th></tr></thead><tbody>${rows.map(({ position, name, team, color, q1, q2, q3, status }) => `<tr><td class="rank${position === 1 ? " winner" : ""}">${formattedPosition(position)}</td><td><b>${name}</b></td><td><i class="dot ${color}"></i> ${team}</td><td class="num">${q1}</td><td class="num">${q2}</td><td class="num">${q3}</td><td><span class="qualification-status${position > 10 ? " eliminated" : ""}">${status}</span></td></tr>`).join("")}</tbody></table>`;
 
 document.querySelectorAll("#vysledky table:not(.session-table) tbody").forEach((body) => {
 	body.innerHTML = raceResults.map(raceRow).join("");
@@ -82,10 +98,10 @@ document.querySelectorAll(".extras details").forEach((details) => {
 	const isQualifying = summary.textContent.includes("Kvalifikácia");
 	const rows = isQualifying ? qualifyingResults : sprintResults;
 	summary.innerHTML = isQualifying
-		? "Kvalifikácia · São Paulo <span>07.11.2026 · 22 JAZDCOV</span>"
+		? "Kvalifikácia · São Paulo <span>07.11.2026 · OFICIÁLNE ČASY</span>"
 		: "Posledný šprint · Singapur <span>10.10.2026 · 22 JAZDCOV</span>";
 	const table = details.querySelector("table");
-	if (table) table.outerHTML = sessionTable(rows);
+	if (table) table.outerHTML = isQualifying ? qualifyingTable(rows) : sessionTable(rows);
 });
 
 const standingsTables = document.querySelectorAll("#bodovanie table.compact");
@@ -118,7 +134,7 @@ if (home) {
 	const haas = [...home.querySelectorAll(".team-grid article")].find((item) => item.querySelector("h3")?.textContent === "Haas");
 	if (haas) haas.querySelector("p").innerHTML = "Rafael Camara <span>CAM</span>";
 	const raceNote = home.querySelector("#vysledky .note");
-	if (raceNote) raceNote.textContent = "VC São Paula · 8. 11. 2026. Šprint sa na tomto víkende nekonal; zobrazený je posledný šprint sezóny v Singapure.";
+	if (raceNote) raceNote.innerHTML = 'VC São Paula · 8. 11. 2026. Šprint sa na tomto víkende nekonal; zobrazený je posledný šprint sezóny v Singapure. Kvalifikačné časy: <a href="https://www.formula1.com/en/results/2026/races/1299/brazil/qualifying" target="_blank" rel="noopener noreferrer">oficiálna klasifikácia F1</a>.';
 }
 
 const standingsNote = document.querySelector("#bodovanie .note");
@@ -145,7 +161,7 @@ if (resultsPage) {
 	const sessionHeading = resultsPage.querySelector(".ruled .section-head h2");
 	if (sessionHeading) sessionHeading.textContent = "Kvalifikácia a posledný šprint";
 	const note = resultsPage.querySelector(".note");
-	if (note) note.textContent = "Zdroj: OpenF1 (výsledky podujatí) a Jolpica (šampionát po 20. kole, doplnený o body zo São Paula). Aktualizované 9. 11. 2026.";
+	if (note) note.innerHTML = 'Kvalifikačné časy: <a href="https://www.formula1.com/en/results/2026/races/1299/brazil/qualifying" target="_blank" rel="noopener noreferrer">oficiálna klasifikácia F1</a>. Šampionát: Jolpica (po 20. kole, doplnený o body zo São Paula). Aktualizované 9. 11. 2026.';
 	const seasonNav = resultsPage.querySelector('nav a[href="bodovanie.html"]');
 	if (seasonNav) seasonNav.textContent = "Bodovanie jazdcov 2026";
 }
