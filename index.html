@@ -42,10 +42,26 @@
 				</ol>
 				<p class="winner-note">VÍŤAZ PRETEKOV: LANDO NORRIS</p>
 			</div>
-			<aside class="feature-photo" aria-label="Pretekárske auto Formuly 1">
+			<aside class="feature-photo" aria-label="Fotografie Formuly 1">
 				<span class="photo-label">FOTO <b>01 / 03</b></span>
-				<span class="photo-credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Renault_Formula_One_racing_car_(49667991997).jpg" target="_blank" rel="noopener noreferrer">Ivan Radic</a> · <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a> · orezané</span>
-				<strong>ULICE, KTORÉ<br>NEMAJÚ CHYBU.</strong>
+				<div class="photo-slides">
+					<figure class="photo-slide is-active" aria-hidden="false">
+						<img src="img/f1-race-car.jpg" alt="Pretekárske auto Renault Formuly 1 vystavené v múzeu" fetchpriority="high">
+						<figcaption class="photo-credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:Renault_Formula_One_racing_car_(49667991997).jpg" target="_blank" rel="noopener noreferrer">Ivan Radic</a> · <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener noreferrer">CC BY 2.0</a> · orezané</figcaption>
+						<strong>IKONA FORMULY 1.</strong>
+					</figure>
+					<figure class="photo-slide" aria-hidden="true">
+						<img src="img/max-verstappen.jpg" alt="Jazdec Max Verstappen v kombinéze Red Bull Racing">
+						<figcaption class="photo-credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:2024-08-25_Motorsport,_Formel_1,_Gro%C3%9Fer_Preis_der_Niederlande_2024_STP_3973_by_Stepro_(cropped).jpg" target="_blank" rel="noopener noreferrer">Steffen Prößdorf</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> · orezané</figcaption>
+						<strong>MAX VERSTAPPEN · RED BULL</strong>
+					</figure>
+					<figure class="photo-slide" aria-hidden="true">
+						<img src="img/ferrari-racing.jpg" alt="Červené vozidlo Ferrari Formuly 1 na okruhu">
+						<figcaption class="photo-credit">Foto: <a href="https://commons.wikimedia.org/wiki/File:2024-08-25_Motorsport,_Formel_1,_Gro%C3%9Fer_Preis_der_Niederlande_2024_STP_3912_by_Stepro.jpg" target="_blank" rel="noopener noreferrer">Steffen Prößdorf</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a></figcaption>
+						<strong>KAŽDÁ ZÁKRUTA ROZHODUJE.</strong>
+					</figure>
+				</div>
+				<button class="photo-toggle" type="button" aria-pressed="false" aria-label="Pozastaviť automatické striedanie fotografií">PAUZA</button>
 			</aside>
 		</section>
 
@@ -142,17 +158,17 @@
 		<section class="section ruled" id="timy" aria-labelledby="teams-title">
 			<header class="section-head"><div><p class="eyebrow">ŠTARTOVÉ POLE <span>03</span></p><h2 id="teams-title">Tímy a jazdci</h2></div><span class="tag">11 TÍMOV <i></i> 22 JAZDCOV</span></header>
 			<div class="team-grid">
-				<article><header><i class="bar papaya"></i>01</header><h3>McLaren</h3><p>Lando Norris <span>NOR</span></p><p>Oscar Piastri <span>PIA</span></p></article>
-				<article><header><i class="bar red"></i>02</header><h3>Ferrari</h3><p>Charles Leclerc <span>LEC</span></p><p>Lewis Hamilton <span>HAM</span></p></article>
-				<article><header><i class="bar blue"></i>03</header><h3>Red Bull Racing</h3><p>Max Verstappen <span>VER</span></p><p>Isack Hadjar <span>HAD</span></p></article>
-				<article><header><i class="bar teal"></i>04</header><h3>Mercedes</h3><p>George Russell <span>RUS</span></p><p>Kimi Antonelli <span>ANT</span></p></article>
-				<article><header><i class="bar green"></i>05</header><h3>Aston Martin</h3><p>Fernando Alonso <span>ALO</span></p><p>Lance Stroll <span>STR</span></p></article>
-				<article><header><i class="bar blue2"></i>06</header><h3>Williams</h3><p>Alexander Albon <span>ALB</span></p><p>Carlos Sainz <span>SAI</span></p></article>
-				<article><header><i class="bar orange"></i>07</header><h3>Audi</h3><p>Nico Hülkenberg <span>HUL</span></p><p>Gabriel Bortoleto <span>BOR</span></p></article>
-				<article><header><i class="bar pink"></i>08</header><h3>Alpine</h3><p>Pierre Gasly <span>GAS</span></p><p>Franco Colapinto <span>COL</span></p></article>
-				<article><header><i class="bar silver"></i>09</header><h3>Haas</h3><p>Esteban Ocon <span>OCO</span></p><p>Oliver Bearman <span>BEA</span></p></article>
-				<article><header><i class="bar periwinkle"></i>10</header><h3>Racing Bulls</h3><p>Liam Lawson <span>LAW</span></p><p>Arvid Lindblad <span>LIN</span></p></article>
-				<article><header><i class="bar sand"></i>11</header><h3>Cadillac</h3><p>Sergio Pérez <span>PER</span></p><p>Valtteri Bottas <span>BOT</span></p></article>
+				<article><header><i class="bar papaya"></i>01</header><img class="team-logo" src="img/team-logos/mclaren.svg" alt="" aria-hidden="true"><h3>McLaren</h3><p>Lando Norris <span>NOR</span></p><p>Oscar Piastri <span>PIA</span></p></article>
+				<article><header><i class="bar red"></i>02</header><img class="team-logo" src="img/team-logos/ferrari.svg" alt="" aria-hidden="true"><h3>Ferrari</h3><p>Charles Leclerc <span>LEC</span></p><p>Lewis Hamilton <span>HAM</span></p></article>
+				<article><header><i class="bar blue"></i>03</header><img class="team-logo" src="img/team-logos/redbull.svg" alt="" aria-hidden="true"><h3>Red Bull Racing</h3><p>Max Verstappen <span>VER</span></p><p>Isack Hadjar <span>HAD</span></p></article>
+				<article><header><i class="bar teal"></i>04</header><img class="team-logo" src="img/team-logos/mercedes.svg" alt="" aria-hidden="true"><h3>Mercedes</h3><p>George Russell <span>RUS</span></p><p>Kimi Antonelli <span>ANT</span></p></article>
+				<article><header><i class="bar green"></i>05</header><img class="team-logo" src="img/team-logos/aston-martin.svg" alt="" aria-hidden="true"><h3>Aston Martin</h3><p>Fernando Alonso <span>ALO</span></p><p>Lance Stroll <span>STR</span></p></article>
+				<article><header><i class="bar blue2"></i>06</header><img class="team-logo" src="img/team-logos/williams.png" alt="" aria-hidden="true"><h3>Williams</h3><p>Alexander Albon <span>ALB</span></p><p>Carlos Sainz <span>SAI</span></p></article>
+				<article><header><i class="bar orange"></i>07</header><img class="team-logo" src="img/team-logos/audi.svg" alt="" aria-hidden="true"><h3>Audi</h3><p>Nico Hülkenberg <span>HUL</span></p><p>Gabriel Bortoleto <span>BOR</span></p></article>
+				<article><header><i class="bar pink"></i>08</header><img class="team-logo" src="img/team-logos/alpine.svg" alt="" aria-hidden="true"><h3>Alpine</h3><p>Pierre Gasly <span>GAS</span></p><p>Franco Colapinto <span>COL</span></p></article>
+				<article><header><i class="bar silver"></i>09</header><img class="team-logo" src="img/team-logos/haas.svg" alt="" aria-hidden="true"><h3>Haas</h3><p>Esteban Ocon <span>OCO</span></p><p>Oliver Bearman <span>BEA</span></p></article>
+				<article><header><i class="bar periwinkle"></i>10</header><img class="team-logo" src="img/team-logos/redbull.svg" alt="" aria-hidden="true"><h3>Racing Bulls</h3><p>Liam Lawson <span>LAW</span></p><p>Arvid Lindblad <span>LIN</span></p></article>
+				<article><header><i class="bar sand"></i>11</header><img class="team-logo" src="img/team-logos/cadillac.svg" alt="" aria-hidden="true"><h3>Cadillac</h3><p>Sergio Pérez <span>PER</span></p><p>Valtteri Bottas <span>BOT</span></p></article>
 			</div>
 			<p class="note">Zostavy sú ilustračné a môžu sa líšiť od oficiálnej štartovej listiny.</p>
 		</section>

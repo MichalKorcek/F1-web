@@ -135,6 +135,45 @@ if (home) {
 	if (raceNote) raceNote.innerHTML = 'VC São Paula · 8. 11. 2026. Šprint sa na tomto víkende nekonal; zobrazený je posledný šprint sezóny v Singapure. Kvalifikačné časy: <a href="https://www.formula1.com/en/results/2026/races/1299/brazil/qualifying" target="_blank" rel="noopener noreferrer">oficiálna klasifikácia F1</a>.';
 }
 
+const photoCarousel = document.querySelector(".feature-photo");
+if (photoCarousel) {
+	const slides = [...photoCarousel.querySelectorAll(".photo-slide")];
+	const counter = photoCarousel.querySelector(".photo-label b");
+	const toggle = photoCarousel.querySelector(".photo-toggle");
+	if (slides.length > 1 && counter && toggle) {
+		let activeSlide = 0;
+		let rotationTimer = null;
+		const showNextSlide = () => {
+			slides[activeSlide].classList.remove("is-active");
+			slides[activeSlide].setAttribute("aria-hidden", "true");
+			activeSlide = (activeSlide + 1) % slides.length;
+			slides[activeSlide].classList.add("is-active");
+			slides[activeSlide].setAttribute("aria-hidden", "false");
+			counter.textContent = `${String(activeSlide + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
+		};
+		const startRotation = () => {
+			if (rotationTimer !== null) return;
+			rotationTimer = window.setInterval(showNextSlide, 5000);
+			toggle.textContent = "PAUZA";
+			toggle.setAttribute("aria-label", "Pozastaviť automatické striedanie fotografií");
+			toggle.setAttribute("aria-pressed", "false");
+		};
+		const stopRotation = () => {
+			if (rotationTimer !== null) window.clearInterval(rotationTimer);
+			rotationTimer = null;
+			toggle.textContent = "POKRAČOVAŤ";
+			toggle.setAttribute("aria-label", "Pokračovať v automatickom striedaní fotografií");
+			toggle.setAttribute("aria-pressed", "true");
+		};
+		toggle.addEventListener("click", () => {
+			if (rotationTimer === null) startRotation();
+			else stopRotation();
+		});
+		if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) stopRotation();
+		else startRotation();
+	}
+}
+
 const standingsNote = document.querySelector("#bodovanie .note");
 if (standingsNote) standingsNote.textContent = "Poradie po VC São Paula. Sezónny súčet zahŕňa aj jazdcov, ktorí počas roka zaskakovali.";
 
