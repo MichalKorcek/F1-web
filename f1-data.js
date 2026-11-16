@@ -129,8 +129,6 @@ if (home) {
 	if (featureList) featureList.innerHTML = raceResults.slice(0, 5).map(({ position, name, team, gap }) => `<li><b>${formattedPosition(position)}</b><span><strong>${name}</strong><small>${team}</small></span><time>${gap}</time></li>`).join("");
 	const winner = home.querySelector(".winner-note");
 	if (winner) winner.textContent = "NAJRÝCHLEJŠIE KOLO: KIMI ANTONELLI · 1:12.689";
-	const seasonNav = home.querySelector('nav a[href="bodovanie.html"]');
-	if (seasonNav) seasonNav.textContent = "Bodovanie jazdcov 2026";
 	const haas = [...home.querySelectorAll(".team-grid article")].find((item) => item.querySelector("h3")?.textContent === "Haas");
 	if (haas) haas.querySelector("p").innerHTML = "Rafael Camara <span>CAM</span>";
 	const raceNote = home.querySelector("#vysledky .note");
@@ -162,6 +160,4 @@ if (resultsPage) {
 	if (sessionHeading) sessionHeading.textContent = "Kvalifikácia a posledný šprint";
 	const note = resultsPage.querySelector(".note");
 	if (note) note.innerHTML = 'Kvalifikačné časy: <a href="https://www.formula1.com/en/results/2026/races/1299/brazil/qualifying" target="_blank" rel="noopener noreferrer">oficiálna klasifikácia F1</a>. Šampionát: Jolpica (po 20. kole, doplnený o body zo São Paula). Aktualizované 9. 11. 2026.';
-	const seasonNav = resultsPage.querySelector('nav a[href="bodovanie.html"]');
-	if (seasonNav) seasonNav.textContent = "Bodovanie jazdcov 2026";
 }
