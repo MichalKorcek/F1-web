@@ -139,10 +139,8 @@ const photoCarousel = document.querySelector(".feature-photo");
 if (photoCarousel) {
 	const slides = [...photoCarousel.querySelectorAll(".photo-slide")];
 	const counter = photoCarousel.querySelector(".photo-label b");
-	const toggle = photoCarousel.querySelector(".photo-toggle");
-	if (slides.length > 1 && counter && toggle) {
+	if (slides.length > 1 && counter) {
 		let activeSlide = 0;
-		let rotationTimer = null;
 		const showNextSlide = () => {
 			slides[activeSlide].classList.remove("is-active");
 			slides[activeSlide].setAttribute("aria-hidden", "true");
@@ -151,26 +149,9 @@ if (photoCarousel) {
 			slides[activeSlide].setAttribute("aria-hidden", "false");
 			counter.textContent = `${String(activeSlide + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
 		};
-		const startRotation = () => {
-			if (rotationTimer !== null) return;
-			rotationTimer = window.setInterval(showNextSlide, 5000);
-			toggle.textContent = "PAUZA";
-			toggle.setAttribute("aria-label", "Pozastaviť automatické striedanie fotografií");
-			toggle.setAttribute("aria-pressed", "false");
-		};
-		const stopRotation = () => {
-			if (rotationTimer !== null) window.clearInterval(rotationTimer);
-			rotationTimer = null;
-			toggle.textContent = "POKRAČOVAŤ";
-			toggle.setAttribute("aria-label", "Pokračovať v automatickom striedaní fotografií");
-			toggle.setAttribute("aria-pressed", "true");
-		};
-		toggle.addEventListener("click", () => {
-			if (rotationTimer === null) startRotation();
-			else stopRotation();
-		});
-		if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) stopRotation();
-		else startRotation();
+		if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+			window.setInterval(showNextSlide, 3000);
+		}
 	}
 }
 
