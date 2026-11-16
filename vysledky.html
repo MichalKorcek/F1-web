@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="sk">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Kompletné výsledky pretekov, kvalifikácie a šprintu Formuly 1.">
+	<title>Výsledky | F1 Web</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/svg+xml" href="favicon.svg">
+	<link rel="stylesheet" href="styles.css">
+	<script src="f1-data.js" defer></script>
+</head>
+<body>
+	<header class="site-header">
+		<a class="brand" href="index.html" aria-label="F1 Web, domov"><b>F1</b><span>WEB</span></a>
+		<nav aria-label="Hlavná navigácia">
+			<a class="current-page" href="vysledky.html" aria-current="page">Posledné výsledky</a><a href="bodovanie.html">Bodovanie jazdcov 2026/27</a><a href="timy.html">Jazdci a stajne</a>
+		</nav>
+		<div class="auth-links"><span>Prihlásenie</span><span class="register">Registrácia</span></div>
+	</header>
+
+	<main class="page results-page">
+		<div class="kicker"><span>F1 / 2026 / DATA CENTRE</span><span class="demo">DEMO · ILUSTRAČNÉ ÚDAJE</span></div>
+		<section class="page-intro" aria-labelledby="page-title">
+			<h1 id="page-title">VÝSLEDKY <span>&amp;</span><br>ŠTATISTIKY</h1>
+			<p>Kompletný prehľad posledného pretekárskeho víkendu.<br>Preteky, kvalifikácia a šprint.</p>
+		</section>
+
+		<section class="section" id="vysledky" aria-labelledby="race-title">
+			<header class="section-head"><div><p class="eyebrow">01 / RACE CLASSIFICATION</p><h2 id="race-title">Výsledok závodu</h2></div><span class="tag">VEĽKÁ CENA<br>SEZÓNA 2026 / 27</span></header>
+			<div class="race-meta results-meta"><strong>FORMULA 1 GRAND PRIX 2026</strong><span>Circuit of The Americas · 22 jazdcov</span></div>
+			<div class="table-scroll"><table>
+				<thead><tr><th>POS.</th><th>JAZDEC</th><th>TÍM</th><th>ČAS / STRATA</th><th class="num">BODY</th></tr></thead>
+				<tbody>
+					<tr><td class="rank winner">01</td><td><b>Lando Norris</b><small class="code">NOR</small></td><td><i class="dot papaya"></i> McLaren</td><td>1:32:18.402</td><td class="num points">25</td></tr>
+					<tr><td class="rank">02</td><td><b>Oscar Piastri</b><small class="code">PIA</small></td><td><i class="dot papaya"></i> McLaren</td><td>+ 2.418 s</td><td class="num points">18</td></tr>
+					<tr><td class="rank">03</td><td><b>Max Verstappen</b><small class="code">VER</small></td><td><i class="dot blue"></i> Red Bull Racing</td><td>+ 5.106 s</td><td class="num points">15</td></tr>
+					<tr><td class="rank">04</td><td><b>Charles Leclerc</b><small class="code">LEC</small></td><td><i class="dot red"></i> Ferrari</td><td>+ 8.734 s</td><td class="num points">12</td></tr>
+					<tr><td class="rank">05</td><td><b>George Russell</b><small class="code">RUS</small></td><td><i class="dot teal"></i> Mercedes</td><td>+ 12.090 s</td><td class="num points">10</td></tr>
+					<tr><td class="rank">06</td><td><b>Lewis Hamilton</b><small class="code">HAM</small></td><td><i class="dot red"></i> Ferrari</td><td>+ 14.552 s</td><td class="num points">8</td></tr>
+					<tr><td class="rank">07</td><td><b>Kimi Antonelli</b><small class="code">ANT</small></td><td><i class="dot teal"></i> Mercedes</td><td>+ 18.107 s</td><td class="num points">6</td></tr>
+					<tr><td class="rank">08</td><td><b>Carlos Sainz</b><small class="code">SAI</small></td><td><i class="dot blue2"></i> Williams</td><td>+ 21.382 s</td><td class="num points">4</td></tr>
+					<tr><td class="rank">09</td><td><b>Fernando Alonso</b><small class="code">ALO</small></td><td><i class="dot green"></i> Aston Martin</td><td>+ 25.605 s</td><td class="num points">2</td></tr>
+					<tr><td class="rank">10</td><td><b>Pierre Gasly</b><small class="code">GAS</small></td><td><i class="dot pink"></i> Alpine</td><td>+ 28.914 s</td><td class="num points">1</td></tr>
+					<tr><td class="rank">11</td><td><b>Alexander Albon</b><small class="code">ALB</small></td><td><i class="dot blue2"></i> Williams</td><td>+ 31.660 s</td><td class="num points">0</td></tr>
+					<tr><td class="rank">12</td><td><b>Lance Stroll</b><small class="code">STR</small></td><td><i class="dot green"></i> Aston Martin</td><td>+ 35.144 s</td><td class="num points">0</td></tr>
+					<tr><td class="rank">13</td><td><b>Esteban Ocon</b><small class="code">OCO</small></td><td><i class="dot silver"></i> Haas</td><td>+ 38.289 s</td><td class="num points">0</td></tr>
+					<tr><td class="rank">14</td><td><b>Liam Lawson</b><small class="code">LAW</small></td><td><i class="dot periwinkle"></i> Racing Bulls</td><td>+ 41.903 s</td><td class="num points">0</td></tr>
+					<tr><td class="rank">15</td><td><b>Nico Hülkenberg</b><small class="code">HUL</small></td><td><i class="dot orange"></i> Audi</td><td>+ 44.117 s</td><td class="num points">0</td></tr>
+					<tr><td class="rank">16</td><td><b>Oliver Bearman</b><small class="code">BEA</small></td><td><i class="dot silver"></i> Haas</td><td>+ 47.325 s</td><td class="num points">0</td></tr>
+					<tr><td class="rank">17</td><td><b>Franco Colapinto</b><small class="code">COL</small></td><td><i class="dot pink"></i> Alpine</td><td>+ 52.706 s</td><td class="num points">0</td></tr>
+					<tr><td class="rank">18</td><td><b>Gabriel Bortoleto</b><small class="code">BOR</small></td><td><i class="dot orange"></i> Audi</td><td>+ 58.912 s</td><td class="num points">0</td></tr>
+					<tr><td class="rank">19</td><td><b>Arvid Lindblad</b><small class="code">LIN</small></td><td><i class="dot periwinkle"></i> Racing Bulls</td><td>+ 1:02.455</td><td class="num points">0</td></tr>
+					<tr><td class="rank">20</td><td><b>Sergio Pérez</b><small class="code">PER</small></td><td><i class="dot sand"></i> Cadillac</td><td>+ 1:08.037</td><td class="num points">0</td></tr>
+					<tr><td class="rank">21</td><td><b>Valtteri Bottas</b><small class="code">BOT</small></td><td><i class="dot sand"></i> Cadillac</td><td>+ 1:12.680</td><td class="num points">0</td></tr>
+					<tr><td class="rank">22</td><td><b>Isack Hadjar</b><small class="code">HAD</small></td><td><i class="dot blue"></i> Red Bull Racing</td><td>DNF</td><td class="num points">0</td></tr>
+				</tbody>
+			</table></div>
+		</section>
+
+		<section class="section ruled" aria-label="Výsledky kvalifikácie a šprintu">
+			<header class="section-head"><div><p class="eyebrow">02 / SESSION CLASSIFICATION</p><h2>Kvalifikácia a šprint</h2></div><span class="tag">22 JAZDCOV<br>V KAŽDEJ TABUĽKE</span></header>
+			<div class="extras results-extras">
+				<details open><summary>Kvalifikácia <span>VŠETKÝCH 22 JAZDCOV</span></summary><div class="table-scroll"><table class="session-table"><thead><tr><th>POS.</th><th>JAZDEC</th><th>TÍM</th><th class="num">ČAS</th></tr></thead><tbody>
+					<tr><td class="rank winner">01</td><td><b>Lando Norris</b></td><td>McLaren</td><td class="num">1:31.021</td></tr><tr><td class="rank">02</td><td><b>Oscar Piastri</b></td><td>McLaren</td><td class="num">1:31.123</td></tr><tr><td class="rank">03</td><td><b>Charles Leclerc</b></td><td>Ferrari</td><td class="num">1:31.222</td></tr><tr><td class="rank">04</td><td><b>Max Verstappen</b></td><td>Red Bull Racing</td><td class="num">1:31.302</td></tr><tr><td class="rank">05</td><td><b>Lewis Hamilton</b></td><td>Ferrari</td><td class="num">1:31.440</td></tr><tr><td class="rank">06</td><td><b>George Russell</b></td><td>Mercedes</td><td class="num">1:31.508</td></tr><tr><td class="rank">07</td><td><b>Kimi Antonelli</b></td><td>Mercedes</td><td class="num">1:31.612</td></tr><tr><td class="rank">08</td><td><b>Carlos Sainz</b></td><td>Williams</td><td class="num">1:31.758</td></tr><tr><td class="rank">09</td><td><b>Fernando Alonso</b></td><td>Aston Martin</td><td class="num">1:31.819</td></tr><tr><td class="rank">10</td><td><b>Alexander Albon</b></td><td>Williams</td><td class="num">1:31.902</td></tr><tr><td class="rank">11</td><td><b>Pierre Gasly</b></td><td>Alpine</td><td class="num">1:32.017</td></tr><tr><td class="rank">12</td><td><b>Lance Stroll</b></td><td>Aston Martin</td><td class="num">1:32.105</td></tr><tr><td class="rank">13</td><td><b>Esteban Ocon</b></td><td>Haas</td><td class="num">1:32.223</td></tr><tr><td class="rank">14</td><td><b>Liam Lawson</b></td><td>Racing Bulls</td><td class="num">1:32.319</td></tr><tr><td class="rank">15</td><td><b>Nico Hülkenberg</b></td><td>Audi</td><td class="num">1:32.401</td></tr><tr><td class="rank">16</td><td><b>Oliver Bearman</b></td><td>Haas</td><td class="num">1:32.523</td></tr><tr><td class="rank">17</td><td><b>Franco Colapinto</b></td><td>Alpine</td><td class="num">1:32.642</td></tr><tr><td class="rank">18</td><td><b>Gabriel Bortoleto</b></td><td>Audi</td><td class="num">1:32.791</td></tr><tr><td class="rank">19</td><td><b>Arvid Lindblad</b></td><td>Racing Bulls</td><td class="num">1:32.912</td></tr><tr><td class="rank">20</td><td><b>Sergio Pérez</b></td><td>Cadillac</td><td class="num">1:33.081</td></tr><tr><td class="rank">21</td><td><b>Valtteri Bottas</b></td><td>Cadillac</td><td class="num">1:33.217</td></tr><tr><td class="rank">22</td><td><b>Isack Hadjar</b></td><td>Red Bull Racing</td><td class="num">1:33.360</td></tr>
+				</tbody></table></div></details>
+				<details open><summary>Šprint <span>VŠETKÝCH 22 JAZDCOV</span></summary><div class="table-scroll"><table class="session-table"><thead><tr><th>POS.</th><th>JAZDEC</th><th>TÍM</th><th class="num">ČAS / STRATA</th></tr></thead><tbody>
+					<tr><td class="rank winner">01</td><td><b>Oscar Piastri</b></td><td>McLaren</td><td class="num">31:42.105</td></tr><tr><td class="rank">02</td><td><b>Lando Norris</b></td><td>McLaren</td><td class="num">+ 1.204 s</td></tr><tr><td class="rank">03</td><td><b>George Russell</b></td><td>Mercedes</td><td class="num">+ 3.819 s</td></tr><tr><td class="rank">04</td><td><b>Charles Leclerc</b></td><td>Ferrari</td><td class="num">+ 5.103 s</td></tr><tr><td class="rank">05</td><td><b>Max Verstappen</b></td><td>Red Bull Racing</td><td class="num">+ 6.292 s</td></tr><tr><td class="rank">06</td><td><b>Kimi Antonelli</b></td><td>Mercedes</td><td class="num">+ 8.426 s</td></tr><tr><td class="rank">07</td><td><b>Lewis Hamilton</b></td><td>Ferrari</td><td class="num">+ 10.105 s</td></tr><tr><td class="rank">08</td><td><b>Carlos Sainz</b></td><td>Williams</td><td class="num">+ 12.840 s</td></tr><tr><td class="rank">09</td><td><b>Fernando Alonso</b></td><td>Aston Martin</td><td class="num">+ 15.091 s</td></tr><tr><td class="rank">10</td><td><b>Pierre Gasly</b></td><td>Alpine</td><td class="num">+ 17.307 s</td></tr><tr><td class="rank">11</td><td><b>Alexander Albon</b></td><td>Williams</td><td class="num">+ 18.472 s</td></tr><tr><td class="rank">12</td><td><b>Lance Stroll</b></td><td>Aston Martin</td><td class="num">+ 20.634 s</td></tr><tr><td class="rank">13</td><td><b>Esteban Ocon</b></td><td>Haas</td><td class="num">+ 22.019 s</td></tr><tr><td class="rank">14</td><td><b>Liam Lawson</b></td><td>Racing Bulls</td><td class="num">+ 23.805 s</td></tr><tr><td class="rank">15</td><td><b>Nico Hülkenberg</b></td><td>Audi</td><td class="num">+ 25.602 s</td></tr><tr><td class="rank">16</td><td><b>Oliver Bearman</b></td><td>Haas</td><td class="num">+ 27.394 s</td></tr><tr><td class="rank">17</td><td><b>Franco Colapinto</b></td><td>Alpine</td><td class="num">+ 29.816 s</td></tr><tr><td class="rank">18</td><td><b>Gabriel Bortoleto</b></td><td>Audi</td><td class="num">+ 31.709 s</td></tr><tr><td class="rank">19</td><td><b>Arvid Lindblad</b></td><td>Racing Bulls</td><td class="num">+ 34.288 s</td></tr><tr><td class="rank">20</td><td><b>Sergio Pérez</b></td><td>Cadillac</td><td class="num">+ 37.029 s</td></tr><tr><td class="rank">21</td><td><b>Valtteri Bottas</b></td><td>Cadillac</td><td class="num">+ 40.612 s</td></tr><tr><td class="rank">22</td><td><b>Isack Hadjar</b></td><td>Red Bull Racing</td><td class="num">DNF</td></tr>
+				</tbody></table></div></details>
+			</div>
+			<p class="note">Všetky výsledky sú ilustračné a neslúžia ako oficiálna klasifikácia.</p>
+		</section>
+	</main>
+
+	<footer class="footer"><a class="brand" href="index.html" aria-label="F1 Web, domov"><b>F1</b><span>WEB</span></a><p>Prehľad Formuly 1, ktorý ide priamo k veci.</p><a href="#vysledky">SPÄŤ NAHOR ↑</a></footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="sk">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Prehľad tímov a jazdcov štartového poľa Formuly 1.">
+	<title>Tímy a jazdci | F1 Web</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/svg+xml" href="favicon.svg">
+	<link rel="stylesheet" href="styles.css">
+	<script src="f1-data.js" defer></script>
+</head>
+<body>
+	<header class="site-header">
+		<a class="brand" href="index.html" aria-label="F1 Web, domov"><b>F1</b><span>WEB</span></a>
+		<nav aria-label="Hlavná navigácia">
+			<a href="vysledky.html">Posledné výsledky</a><a href="bodovanie.html">Bodovanie jazdcov 2026</a><a class="current-page" href="timy.html" aria-current="page">Jazdci a stajne</a>
+		</nav>
+		<div class="auth-links"><span>Prihlásenie</span><span class="register">Registrácia</span></div>
+	</header>
+
+	<main class="page teams-page">
+		<div class="kicker"><span>ŠTARTOVÉ POLE / 2026</span><span class="demo">DEMO · ILUSTRAČNÉ ÚDAJE</span></div>
+		<section class="page-intro" aria-labelledby="page-title">
+			<h1 id="page-title">TÍMY<br><span>&amp; JAZDCI</span></h1>
+			<p>Kompletné štartové pole sezóny 2026.<br>11 tímov a ich jazdecké dvojice.</p>
+		</section>
+
+		<section class="section ruled" id="timy" aria-labelledby="teams-title">
+			<header class="section-head"><div><p class="eyebrow">ŠTARTOVÉ POLE <span>03</span></p><h2 id="teams-title">Tímy a jazdci</h2></div><span class="tag">11 TÍMOV <i></i> 22 JAZDCOV</span></header>
+			<div class="team-grid">
+				<article><header><i class="bar papaya"></i>01</header><h3>McLaren</h3><p>Lando Norris <span>NOR</span></p><p>Oscar Piastri <span>PIA</span></p></article>
+				<article><header><i class="bar red"></i>02</header><h3>Ferrari</h3><p>Charles Leclerc <span>LEC</span></p><p>Lewis Hamilton <span>HAM</span></p></article>
+				<article><header><i class="bar blue"></i>03</header><h3>Red Bull Racing</h3><p>Max Verstappen <span>VER</span></p><p>Isack Hadjar <span>HAD</span></p></article>
+				<article><header><i class="bar teal"></i>04</header><h3>Mercedes</h3><p>George Russell <span>RUS</span></p><p>Kimi Antonelli <span>ANT</span></p></article>
+				<article><header><i class="bar green"></i>05</header><h3>Aston Martin</h3><p>Fernando Alonso <span>ALO</span></p><p>Lance Stroll <span>STR</span></p></article>
+				<article><header><i class="bar blue2"></i>06</header><h3>Williams</h3><p>Alexander Albon <span>ALB</span></p><p>Carlos Sainz <span>SAI</span></p></article>
+				<article><header><i class="bar orange"></i>07</header><h3>Audi</h3><p>Nico Hülkenberg <span>HUL</span></p><p>Gabriel Bortoleto <span>BOR</span></p></article>
+				<article><header><i class="bar pink"></i>08</header><h3>Alpine</h3><p>Pierre Gasly <span>GAS</span></p><p>Franco Colapinto <span>COL</span></p></article>
+				<article><header><i class="bar silver"></i>09</header><h3>Haas</h3><p>Esteban Ocon <span>OCO</span></p><p>Oliver Bearman <span>BEA</span></p></article>
+				<article><header><i class="bar periwinkle"></i>10</header><h3>Racing Bulls</h3><p>Liam Lawson <span>LAW</span></p><p>Arvid Lindblad <span>LIN</span></p></article>
+				<article><header><i class="bar sand"></i>11</header><h3>Cadillac</h3><p>Sergio Pérez <span>PER</span></p><p>Valtteri Bottas <span>BOT</span></p></article>
+			</div>
+			<p class="note">Zostavy podľa štartového poľa VC São Paula 2026.</p>
+		</section>
+	</main>
+	<footer class="footer"><a class="brand" href="index.html" aria-label="F1 Web, domov"><b>F1</b><span>WEB</span></a><p>Prehľad Formuly 1, ktorý ide priamo k veci.</p><a href="#page-title">SPÄŤ NAHOR ↑</a></footer>
+</body>
+</html>

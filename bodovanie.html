@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="sk">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Priebežné poradie jazdcov a tímov Formuly 1 v sezóne 2026.">
+	<title>Bodovanie | F1 Web</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/svg+xml" href="favicon.svg">
+	<link rel="stylesheet" href="styles.css">
+	<script src="f1-data.js" defer></script>
+</head>
+<body>
+	<header class="site-header">
+		<a class="brand" href="index.html" aria-label="F1 Web, domov"><b>F1</b><span>WEB</span></a>
+		<nav aria-label="Hlavná navigácia">
+			<a href="vysledky.html">Posledné výsledky</a><a class="current-page" href="bodovanie.html" aria-current="page">Bodovanie jazdcov 2026</a><a href="timy.html">Jazdci a stajne</a>
+		</nav>
+		<div class="auth-links"><span>Prihlásenie</span><span class="register">Registrácia</span></div>
+	</header>
+
+	<main class="page standings-page">
+		<div class="kicker"><span>SEZÓNA 2026 / PORADIE</span><span class="demo">DEMO · ILUSTRAČNÉ ÚDAJE</span></div>
+		<section class="page-intro" aria-labelledby="page-title">
+			<h1 id="page-title">BODOVANIE<br><span>2026</span></h1>
+			<p>Priebežné poradie jazdcov a tímov.<br>Stav po Veľkej cene São Paula.</p>
+		</section>
+
+		<section class="section ruled" id="bodovanie" aria-labelledby="standings-title">
+			<header class="section-head"><div><p class="eyebrow">SEZÓNA 2026 <span>02</span></p><h2 id="standings-title">Priebežné poradie</h2></div><span class="tag">PO VC SÃO PAULA</span></header>
+			<div class="columns">
+				<div><div class="subhead"><h3>Jazdci</h3><span>MAJSTROVSTVÁ JAZDCOV</span></div><div class="table-scroll"><table class="compact">
+					<thead><tr><th>#</th><th>JAZDEC</th><th>TÍM</th><th class="num">BODY</th></tr></thead>
+					<tbody>
+						<tr><td class="rank winner">01</td><td><b>K. Antonelli</b></td><td><i class="dot teal"></i></td><td class="num points">400</td></tr>
+						<tr><td class="rank">02</td><td><b>M. Verstappen</b></td><td><i class="dot blue"></i></td><td class="num points">297</td></tr>
+						<tr><td class="rank">03</td><td><b>G. Russell</b></td><td><i class="dot teal"></i></td><td class="num points">274</td></tr>
+						<tr><td class="rank">04</td><td><b>L. Norris</b></td><td><i class="dot papaya"></i></td><td class="num points">271</td></tr>
+						<tr><td class="rank">05</td><td><b>L. Hamilton</b></td><td><i class="dot red"></i></td><td class="num points">263</td></tr>
+						<tr><td class="rank">06</td><td><b>C. Leclerc</b></td><td><i class="dot red"></i></td><td class="num points">255</td></tr>
+						<tr><td class="rank">07</td><td><b>O. Piastri</b></td><td><i class="dot papaya"></i></td><td class="num points">160</td></tr>
+						<tr><td class="rank">08</td><td><b>I. Hadjar</b></td><td><i class="dot blue"></i></td><td class="num points">137</td></tr>
+						<tr><td class="rank">09</td><td><b>L. Lawson</b></td><td><i class="dot periwinkle"></i></td><td class="num points">93</td></tr>
+						<tr><td class="rank">10</td><td><b>P. Gasly</b></td><td><i class="dot pink"></i></td><td class="num points">42</td></tr>
+						<tr><td class="rank">11</td><td><b>A. Lindblad</b></td><td><i class="dot periwinkle"></i></td><td class="num points">38</td></tr>
+						<tr><td class="rank">12</td><td><b>F. Colapinto</b></td><td><i class="dot pink"></i></td><td class="num points">27</td></tr>
+						<tr><td class="rank">13</td><td><b>O. Bearman</b></td><td><i class="dot silver"></i></td><td class="num points">23</td></tr>
+						<tr><td class="rank">14</td><td><b>N. Hülkenberg</b></td><td><i class="dot orange"></i></td><td class="num points">15</td></tr>
+						<tr><td class="rank">15</td><td><b>G. Bortoleto</b></td><td><i class="dot orange"></i></td><td class="num points">14</td></tr>
+						<tr><td class="rank">16</td><td><b>E. Ocon</b></td><td><i class="dot silver"></i></td><td class="num points">7</td></tr>
+						<tr><td class="rank">17</td><td><b>F. Alonso</b></td><td><i class="dot green"></i></td><td class="num points">7</td></tr>
+						<tr><td class="rank">18</td><td><b>C. Sainz</b></td><td><i class="dot blue2"></i></td><td class="num points">7</td></tr>
+						<tr><td class="rank">19</td><td><b>A. Albon</b></td><td><i class="dot blue2"></i></td><td class="num points">5</td></tr>
+						<tr><td class="rank">20</td><td><b>Y. Tsunoda</b></td><td><i class="dot periwinkle"></i></td><td class="num points">1</td></tr>
+						<tr><td class="rank">21</td><td><b>R. Hirakawa</b></td><td><i class="dot silver"></i></td><td class="num points">1</td></tr>
+						<tr><td class="rank">22</td><td><b>R. Camara</b></td><td><i class="dot silver"></i></td><td class="num points">0</td></tr>
+						<tr><td class="rank">23</td><td><b>L. Stroll</b></td><td><i class="dot green"></i></td><td class="num points">0</td></tr>
+						<tr><td class="rank">24</td><td><b>V. Bottas</b></td><td><i class="dot sand"></i></td><td class="num points">0</td></tr>
+						<tr><td class="rank">25</td><td><b>S. Pérez</b></td><td><i class="dot sand"></i></td><td class="num points">0</td></tr>
+					</tbody>
+				</table></div></div>
+				<div><div class="subhead"><h3>Stajne</h3><span>POHÁR KONŠTRUKTÉROV</span></div><div class="table-scroll"><table class="compact">
+					<thead><tr><th>#</th><th>TÍM</th><th class="num">BODY</th><th class="num">ROZDIEL</th></tr></thead>
+					<tbody>
+						<tr><td class="rank winner">01</td><td><i class="dot teal"></i> Mercedes</td><td class="num points">674</td><td class="num">—</td></tr>
+						<tr><td class="rank">02</td><td><i class="dot red"></i> Ferrari</td><td class="num points">518</td><td class="num">− 156</td></tr>
+						<tr><td class="rank">03</td><td><i class="dot blue"></i> Red Bull</td><td class="num points">448</td><td class="num">− 226</td></tr>
+						<tr><td class="rank">04</td><td><i class="dot papaya"></i> McLaren</td><td class="num points">431</td><td class="num">− 243</td></tr>
+						<tr><td class="rank">05</td><td><i class="dot periwinkle"></i> Racing Bulls</td><td class="num points">118</td><td class="num">− 556</td></tr>
+						<tr><td class="rank">06</td><td><i class="dot pink"></i> Alpine</td><td class="num points">69</td><td class="num">− 605</td></tr>
+						<tr><td class="rank">07</td><td><i class="dot silver"></i> Haas</td><td class="num points">31</td><td class="num">− 643</td></tr>
+						<tr><td class="rank">08</td><td><i class="dot orange"></i> Audi</td><td class="num points">29</td><td class="num">− 645</td></tr>
+						<tr><td class="rank">09</td><td><i class="dot blue2"></i> Williams</td><td class="num points">12</td><td class="num">− 662</td></tr>
+						<tr><td class="rank">10</td><td><i class="dot green"></i> Aston Martin</td><td class="num points">7</td><td class="num">− 667</td></tr>
+						<tr><td class="rank">11</td><td><i class="dot sand"></i> Cadillac</td><td class="num points">0</td><td class="num">− 674</td></tr>
+					</tbody>
+				</table></div></div>
+			</div>
+			<p class="note">Poradie po VC São Paula. Sezónny súčet zahŕňa aj jazdcov, ktorí počas roka zaskakovali.</p>
+		</section>
+	</main>
+	<footer class="footer"><a class="brand" href="index.html" aria-label="F1 Web, domov"><b>F1</b><span>WEB</span></a><p>Prehľad Formuly 1, ktorý ide priamo k veci.</p><a href="#page-title">SPÄŤ NAHOR ↑</a></footer>
+</body>
+</html>
