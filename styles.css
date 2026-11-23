@@ -93,6 +93,7 @@ tbody tr:hover { background: #15191a; }
 .team-grid article:nth-child(11) { --team-accent: #d8c49b; }
 .team-grid article header { display: flex; justify-content: space-between; color: #68716f; font-size: 7px; }.bar { width: 23px; height: 3px; }
 .team-logo { display: block; width: 112px; height: 36px; margin: 11px 0 7px; object-fit: contain; object-position: left center; filter: brightness(0) invert(1); opacity: .9; }
+.team-logo.racing-bulls-logo { filter: none; opacity: 1; }
 .team-grid h3 { margin: 9px 0; font-family: var(--display); font-size: 19px; font-weight: 600; }.team-grid p { display: flex; justify-content: space-between; gap: 4px; margin: 3px 0; color: #b2b8b5; font-size: 8px; }.team-grid p span { color: #727a78; font-size: 6px; font-weight: 700; }
 .blue2 { background: #428ce5; }.orange { background: #e75943; }.pink { background: #eb79a0; }.silver { background: #d6d9d8; }.periwinkle { background: #8d9cec; }.sand { background: #d8c49b; }
 .footer { display: flex; min-height: 82px; align-items: center; justify-content: space-between; gap: 16px; padding: 16px max(5vw, calc((100vw - 1280px) / 2)); border-top: 1px solid var(--line); background: #0c0f10; }.footer p { margin: 0; color: #858d8b; font-size: 8px; }.footer > a:last-child { font-size: 7px; font-weight: 700; letter-spacing: .07em; }
