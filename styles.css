@@ -158,6 +158,11 @@ tbody tr:hover { background: #15191a; }
 .photo-credit-trigger:hover + .photo-credit, .photo-credit-trigger:focus + .photo-credit { opacity: 1; pointer-events: auto; transform: translateY(0); }
 .photo-credit a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .feature-photo strong { position: absolute; z-index: 3; right: 25px; bottom: 25px; left: 25px; font-family: var(--body); font-size: 25px; font-weight: 800; line-height: 1.1; }
+.photo-controls { position: absolute; z-index: 4; right: 25px; bottom: 68px; left: 25px; display: flex; align-items: center; justify-content: space-between; pointer-events: none; }
+.photo-arrow { display: grid; width: 36px; height: 36px; place-items: center; border: 1px solid rgba(255,255,255,.35); border-radius: 50%; background: rgba(8,10,11,.72); color: white; cursor: pointer; font-family: var(--display); font-size: 28px; line-height: 1; pointer-events: auto; }
+.photo-dots { display: flex; gap: 7px; margin: 0 auto; pointer-events: auto; }
+.photo-dot { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 50%; background: rgba(255,255,255,.45); cursor: pointer; }
+.photo-dot.is-active { background: var(--red); }
 .eyebrow { font-size: 10px; }
 .section { padding-bottom: 76px; }
 .section-head { margin-bottom: 23px; }
@@ -178,6 +183,12 @@ td { height: 56px; font-size: 13px; }
 .standings-expanded .standings-extra { display: table-row; }
 .standings-toggle { display: inline-flex; min-height: 38px; align-items: center; margin-top: 12px; padding: 0 12px; border: 1px solid var(--line); background: transparent; color: #dfe2df; cursor: pointer; font-size: 9px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
 .standings-toggle:hover, .standings-toggle:focus-visible { border-color: var(--red); color: var(--red); }
+.next-race { margin-top: 17px; padding: 17px 18px; border: 1px solid var(--line); border-left: 3px solid var(--red); background: #111516; }
+.next-race p { display: flex; justify-content: space-between; margin: 0 0 8px; color: #92999a; font-size: 8px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.next-race p span { color: var(--red); }
+.next-race h3 { margin: 0 0 5px; font-family: var(--display); font-size: 24px; }
+.next-race time { color: #b4bab8; font-size: 10px; }
+.session-switch, .standings-switch { display: none; }
 .team-code { display: inline-block; min-width: 38px; margin-right: 6px; color: #dfe2df; font-family: var(--display); font-size: 10px; font-weight: 700; letter-spacing: .06em; }
 .team-grid article { min-height: 158px; padding: 15px; }
 .team-grid article header { font-size: 10px; }
@@ -234,6 +245,12 @@ td { height: 56px; font-size: 13px; }
   .team-grid h3 { font-size: 19px; }
   .team-grid p { font-size: 10px; }
   .team-grid p span { font-size: 9px; }
+  .session-switch, .standings-switch { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 0 0 12px; }
+  .standings-switch { grid-template-columns: repeat(2, 1fr); }
+  .session-tab, .standings-tab { min-height: 42px; border: 1px solid var(--line); background: var(--panel); color: #adb4b2; cursor: pointer; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+  .session-tab.is-active, .standings-tab.is-active { border-color: var(--red); color: white; }
+  .session-view:not(.is-mobile-active), .standing-view:not(.is-mobile-active) { display: none; }
+  #vysledky .extras { display: block; }
 }
 @media (max-width: 360px) {
   .auth-links { gap: 7px; font-size: 8px; }

@@ -30,12 +30,16 @@
 
 		<section class="section ruled" id="bodovanie" aria-labelledby="standings-title">
 			<header class="section-head"><div><p class="eyebrow">SEZÓNA 2026 <span>02</span></p><h2 id="standings-title">Priebežné poradie</h2></div><span class="tag">PO VC SÃO PAULA</span></header>
+			<div class="standings-switch" role="tablist" aria-label="Bodovanie podľa kategórie">
+				<button type="button" class="standings-tab is-active" data-standing="jazdci" role="tab" aria-selected="true">Jazdci</button>
+				<button type="button" class="standings-tab" data-standing="stajne" role="tab" aria-selected="false">Stajne</button>
+			</div>
 			<div class="columns">
-				<div><div class="subhead"><h3>Jazdci</h3><span>MAJSTROVSTVÁ JAZDCOV</span></div><div class="table-scroll"><table class="compact">
+				<div class="standing-view" data-standing="jazdci"><div class="subhead"><h3>Jazdci</h3><span>MAJSTROVSTVÁ JAZDCOV</span></div><div class="table-scroll"><table class="compact">
 					<thead><tr><th>#</th><th>JAZDEC</th><th>TÍM</th><th class="num">BODY</th></tr></thead>
 					<tbody>
-						<tr><td class="rank winner">01</td><td><b>K. Antonelli</b></td><td><i class="dot teal"></i></td><td class="num points">400</td></tr>
-						<tr><td class="rank">02</td><td><b>M. Verstappen</b></td><td><i class="dot blue"></i></td><td class="num points">297</td></tr>
+						<tr><td class="rank winner">01</td><td><b>K. Antonelli</b></td><td><i class="dot teal"></i><span class="team-code">MER</span></td><td class="num points">400</td></tr>
+						<tr><td class="rank">02</td><td><b>M. Verstappen</b></td><td><i class="dot blue"></i><span class="team-code">RBR</span></td><td class="num points">297</td></tr>
 						<tr><td class="rank">03</td><td><b>G. Russell</b></td><td><i class="dot teal"></i></td><td class="num points">274</td></tr>
 						<tr><td class="rank">04</td><td><b>L. Norris</b></td><td><i class="dot papaya"></i></td><td class="num points">271</td></tr>
 						<tr><td class="rank">05</td><td><b>L. Hamilton</b></td><td><i class="dot red"></i></td><td class="num points">263</td></tr>
@@ -61,7 +65,7 @@
 						<tr><td class="rank">25</td><td><b>S. Pérez</b></td><td><i class="dot sand"></i></td><td class="num points">0</td></tr>
 					</tbody>
 				</table></div></div>
-				<div><div class="subhead"><h3>Stajne</h3><span>POHÁR KONŠTRUKTÉROV</span></div><div class="table-scroll"><table class="compact">
+				<div class="standing-view" data-standing="stajne"><div class="subhead"><h3>Stajne</h3><span>POHÁR KONŠTRUKTÉROV</span></div><div class="table-scroll"><table class="compact">
 					<thead><tr><th>#</th><th>TÍM</th><th class="num">BODY</th><th class="num">ROZDIEL</th></tr></thead>
 					<tbody>
 						<tr><td class="rank winner">01</td><td><i class="dot teal"></i> Mercedes</td><td class="num points">674</td><td class="num">—</td></tr>
@@ -76,7 +80,13 @@
 						<tr><td class="rank">10</td><td><i class="dot green"></i> Aston Martin</td><td class="num points">7</td><td class="num">− 667</td></tr>
 						<tr><td class="rank">11</td><td><i class="dot sand"></i> Cadillac</td><td class="num points">0</td><td class="num">− 674</td></tr>
 					</tbody>
-				</table></div></div>
+				</table></div>
+				<aside class="next-race" aria-label="Ďalšia Veľká cena">
+					<p>Ďalšia Veľká cena <span>KOLO 19</span></p>
+					<h3>Veľká cena Las Vegas</h3>
+					<time datetime="2026-11-21">21. november 2026</time>
+				</aside>
+				</div>
 			</div>
 			<p class="note">Poradie po VC São Paula. Sezónny súčet zahŕňa aj jazdcov, ktorí počas roka zaskakovali.</p>
 		</section>

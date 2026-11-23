@@ -141,7 +141,7 @@ if (standingsTables[1]) {
 }
 
 document.querySelectorAll(".demo").forEach((label) => { label.textContent = "AKTUALIZOVANÉ · 09.11.2026"; });
-const home = document.querySelector("main#domov");
+const home = document.querySelector("main.page:not(.results-page)");
 if (home) {
 	const season = home.querySelector(".kicker > span:first-child");
 	if (season) season.textContent = "SEZÓNA 2026";
@@ -169,14 +169,31 @@ if (photoCarousel) {
 	const counter = photoCarousel.querySelector(".photo-label b");
 	if (slides.length > 1 && counter) {
 		let activeSlide = 0;
-		const showNextSlide = () => {
+		const dotsWrap = photoCarousel.querySelector(".photo-dots");
+		const showSlide = (index) => {
 			slides[activeSlide].classList.remove("is-active");
 			slides[activeSlide].setAttribute("aria-hidden", "true");
-			activeSlide = (activeSlide + 1) % slides.length;
+			activeSlide = (index + slides.length) % slides.length;
 			slides[activeSlide].classList.add("is-active");
 			slides[activeSlide].setAttribute("aria-hidden", "false");
 			counter.textContent = `${String(activeSlide + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
+			dotsWrap?.querySelectorAll(".photo-dot").forEach((dot, dotIndex) => {
+				dot.classList.toggle("is-active", dotIndex === activeSlide);
+				dot.setAttribute("aria-current", dotIndex === activeSlide ? "true" : "false");
+			});
 		};
+		const showNextSlide = () => showSlide(activeSlide + 1);
+		dotsWrap?.replaceChildren(...slides.map((_, index) => {
+			const dot = document.createElement("button");
+			dot.type = "button";
+			dot.className = `photo-dot${index === 0 ? " is-active" : ""}`;
+			dot.setAttribute("aria-label", `Fotografia ${index + 1} z ${slides.length}`);
+			dot.setAttribute("aria-current", index === 0 ? "true" : "false");
+			dot.addEventListener("click", () => showSlide(index));
+			return dot;
+		}));
+		photoCarousel.querySelector(".photo-prev")?.addEventListener("click", () => showSlide(activeSlide - 1));
+		photoCarousel.querySelector(".photo-next")?.addEventListener("click", showNextSlide);
 		if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 			window.setInterval(showNextSlide, 3000);
 		}
@@ -185,6 +202,38 @@ if (photoCarousel) {
 
 const standingsNote = document.querySelector("#bodovanie .note");
 if (standingsNote) standingsNote.textContent = "Poradie po VC São Paula. Sezónny súčet zahŕňa aj jazdcov, ktorí počas roka zaskakovali.";
+
+const sessionSwitch = document.querySelector(".session-switch");
+if (sessionSwitch) {
+	const activateSession = (name) => {
+		sessionSwitch.querySelectorAll(".session-tab").forEach((tab) => {
+			const active = tab.dataset.session === name;
+			tab.classList.toggle("is-active", active);
+			tab.setAttribute("aria-selected", String(active));
+		});
+		document.querySelectorAll(".session-view").forEach((view) => {
+			const active = view.dataset.session === name;
+			view.classList.toggle("is-mobile-active", active);
+			if (view.tagName === "DETAILS" && active) view.open = true;
+		});
+	};
+	sessionSwitch.querySelectorAll(".session-tab").forEach((tab) => tab.addEventListener("click", () => activateSession(tab.dataset.session)));
+	activateSession("preteky");
+}
+
+const standingsSwitch = document.querySelector(".standings-switch");
+if (standingsSwitch) {
+	const activateStanding = (name) => {
+		standingsSwitch.querySelectorAll(".standings-tab").forEach((tab) => {
+			const active = tab.dataset.standing === name;
+			tab.classList.toggle("is-active", active);
+			tab.setAttribute("aria-selected", String(active));
+		});
+		document.querySelectorAll("#bodovanie .standing-view").forEach((view) => view.classList.toggle("is-mobile-active", view.dataset.standing === name));
+	};
+	standingsSwitch.querySelectorAll(".standings-tab").forEach((tab) => tab.addEventListener("click", () => activateStanding(tab.dataset.standing)));
+	activateStanding("jazdci");
+}
 
 document.querySelectorAll(".team-grid article").forEach((team) => {
 	if (team.querySelector("h3")?.textContent === "Haas") {
