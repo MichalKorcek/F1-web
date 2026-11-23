@@ -1,42 +1,42 @@
 const raceResults = [
-	{ position: 1, name: "Lando Norris", code: "NOR", team: "McLaren", color: "papaya", gap: "Víťaz", points: 25 },
-	{ position: 2, name: "Max Verstappen", code: "VER", team: "Red Bull Racing", color: "blue", gap: "+ 14.602 s", points: 18 },
-	{ position: 3, name: "Isack Hadjar", code: "HAD", team: "Red Bull Racing", color: "blue", gap: "+ 24.485 s", points: 15 },
-	{ position: 4, name: "George Russell", code: "RUS", team: "Mercedes", color: "teal", gap: "+ 33.991 s", points: 12 },
-	{ position: 5, name: "Kimi Antonelli", code: "ANT", team: "Mercedes", color: "teal", gap: "+ 36.017 s", points: 10 },
-	{ position: 6, name: "Oscar Piastri", code: "PIA", team: "McLaren", color: "papaya", gap: "+ 56.475 s", points: 8 },
-	{ position: 7, name: "Charles Leclerc", code: "LEC", team: "Ferrari", color: "red", gap: "+ 73.586 s", points: 6 },
-	{ position: 8, name: "Liam Lawson", code: "LAW", team: "Racing Bulls", color: "periwinkle", gap: "+ 75.402 s", points: 4 },
-	{ position: 9, name: "Lewis Hamilton", code: "HAM", team: "Ferrari", color: "red", gap: "+ 96.536 s", points: 2 },
-	{ position: 10, name: "Nico Hülkenberg", code: "HUL", team: "Audi", color: "orange", gap: "+ 1 kolo", points: 1 },
-	{ position: 11, name: "Arvid Lindblad", code: "LIN", team: "Racing Bulls", color: "periwinkle", gap: "+ 1 kolo", points: 0 },
-	{ position: 12, name: "Fernando Alonso", code: "ALO", team: "Aston Martin", color: "green", gap: "+ 1 kolo", points: 0 },
-	{ position: 13, name: "Franco Colapinto", code: "COL", team: "Alpine", color: "pink", gap: "+ 1 kolo", points: 0 },
-	{ position: 14, name: "Pierre Gasly", code: "GAS", team: "Alpine", color: "pink", gap: "+ 1 kolo", points: 0 },
-	{ position: 15, name: "Alexander Albon", code: "ALB", team: "Williams", color: "blue2", gap: "+ 1 kolo", points: 0 },
-	{ position: 16, name: "Gabriel Bortoleto", code: "BOR", team: "Audi", color: "orange", gap: "+ 1 kolo", points: 0 },
-	{ position: 17, name: "Oliver Bearman", code: "BEA", team: "Haas", color: "silver", gap: "+ 1 kolo", points: 0 },
-	{ position: 18, name: "Sergio Pérez", code: "PER", team: "Cadillac", color: "sand", gap: "+ 2 kolá", points: 0 },
-	{ position: 19, name: "Carlos Sainz", code: "SAI", team: "Williams", color: "blue2", gap: "+ 2 kolá", points: 0 },
-	{ position: 20, name: "Rafael Camara", code: "CAM", team: "Haas", color: "silver", gap: "+ 2 kolá", points: 0 },
-	{ position: 21, name: "Lance Stroll", code: "STR", team: "Aston Martin", color: "green", gap: "DNF", points: 0 },
-	{ position: 22, name: "Valtteri Bottas", code: "BOT", team: "Cadillac", color: "sand", gap: "DNF", points: 0 }
+	{ position: 1, name: "Max Verstappen", code: "VER", team: "Red Bull Racing", color: "blue", gap: "1:27:39.624", points: 25 },
+	{ position: 2, name: "Lando Norris", code: "NOR", team: "McLaren", color: "papaya", gap: "+0.639 s", points: 18 },
+	{ position: 3, name: "Oscar Piastri", code: "PIA", team: "McLaren", color: "papaya", gap: "+1.529 s", points: 15 },
+	{ position: 4, name: "Kimi Antonelli", code: "ANT", team: "Mercedes", color: "teal", gap: "+2.574 s", points: 12 },
+	{ position: 5, name: "Pierre Gasly", code: "GAS", team: "Alpine", color: "pink", gap: "+2.927 s", points: 10 },
+	{ position: 6, name: "Franco Colapinto", code: "COL", team: "Alpine", color: "pink", gap: "+7.955 s", points: 8 },
+	{ position: 7, name: "Lewis Hamilton", code: "HAM", team: "Ferrari", color: "red", gap: "+12.795 s", points: 6 },
+	{ position: 8, name: "Carlos Sainz", code: "SAI", team: "Williams", color: "blue2", gap: "+12.938 s", points: 4 },
+	{ position: 9, name: "George Russell", code: "RUS", team: "Mercedes", color: "teal", gap: "+13.192 s", points: 2 },
+	{ position: 10, name: "Charles Leclerc", code: "LEC", team: "Ferrari", color: "red", gap: "+17.554 s", points: 1 },
+	{ position: 11, name: "Nico Hülkenberg", code: "HUL", team: "Audi", color: "orange", gap: "+22.720 s", points: 0 },
+	{ position: 12, name: "Gabriel Bortoleto", code: "BOR", team: "Audi", color: "orange", gap: "+28.602 s", points: 0 },
+	{ position: 13, name: "Oliver Bearman", code: "BEA", team: "Haas", color: "silver", gap: "+28.843 s", points: 0 },
+	{ position: 14, name: "Liam Lawson", code: "LAW", team: "Racing Bulls", color: "periwinkle", gap: "+36.588 s", points: 0 },
+	{ position: 15, name: "Isack Hadjar", code: "HAD", team: "Red Bull Racing", color: "blue", gap: "+46.488 s", points: 0 },
+	{ position: 16, name: "Rafael Camara", code: "CAM", team: "Haas", color: "silver", gap: "+47.814 s", points: 0 },
+	{ position: 17, name: "Lance Stroll", code: "STR", team: "Aston Martin", color: "green", gap: "+68.353 s", points: 0 },
+	{ position: 18, name: "Valtteri Bottas", code: "BOT", team: "Cadillac", color: "sand", gap: "+71.673 s", points: 0 },
+	{ position: 19, name: "Fernando Alonso", code: "ALO", team: "Aston Martin", color: "green", gap: "DNF", points: 0 },
+	{ position: 20, name: "Arvid Lindblad", code: "LIN", team: "Racing Bulls", color: "periwinkle", gap: "DNF", points: 0 },
+	{ position: 21, name: "Sergio Pérez", code: "PER", team: "Cadillac", color: "sand", gap: "DNF", points: 0 },
+	{ position: 22, name: "Alexander Albon", code: "ALB", team: "Williams", color: "blue2", gap: "DNS", points: 0 }
 ];
 
 const qualifyingRows = [
-	["Lando Norris", "McLaren", "papaya"], ["George Russell", "Mercedes", "teal"], ["Kimi Antonelli", "Mercedes", "teal"],
-	["Charles Leclerc", "Ferrari", "red"], ["Liam Lawson", "Racing Bulls", "periwinkle"], ["Nico Hülkenberg", "Audi", "orange"],
-	["Isack Hadjar", "Red Bull Racing", "blue"], ["Oliver Bearman", "Haas", "silver"], ["Fernando Alonso", "Aston Martin", "green"],
-	["Alexander Albon", "Williams", "blue2"], ["Lewis Hamilton", "Ferrari", "red"], ["Oscar Piastri", "McLaren", "papaya"],
-	["Rafael Camara", "Haas", "silver"], ["Arvid Lindblad", "Racing Bulls", "periwinkle"], ["Carlos Sainz", "Williams", "blue2"],
-	["Max Verstappen", "Red Bull Racing", "blue"], ["Franco Colapinto", "Alpine", "pink"], ["Pierre Gasly", "Alpine", "pink"],
-	["Lance Stroll", "Aston Martin", "green"], ["Valtteri Bottas", "Cadillac", "sand"], ["Sergio Pérez", "Cadillac", "sand"],
-	["Gabriel Bortoleto", "Audi", "orange"]
+	["Kimi Antonelli", "Mercedes", "teal"], ["Max Verstappen", "Red Bull Racing", "blue"], ["George Russell", "Mercedes", "teal"],
+	["Lando Norris", "McLaren", "papaya"], ["Isack Hadjar", "Red Bull Racing", "blue"], ["Arvid Lindblad", "Racing Bulls", "periwinkle"],
+	["Oscar Piastri", "McLaren", "papaya"], ["Liam Lawson", "Racing Bulls", "periwinkle"], ["Pierre Gasly", "Alpine", "pink"],
+	["Franco Colapinto", "Alpine", "pink"], ["Charles Leclerc", "Ferrari", "red"], ["Lewis Hamilton", "Ferrari", "red"],
+	["Nico Hülkenberg", "Audi", "orange"], ["Carlos Sainz", "Williams", "blue2"], ["Gabriel Bortoleto", "Audi", "orange"],
+	["Alexander Albon", "Williams", "blue2"], ["Rafael Camara", "Haas", "silver"], ["Sergio Pérez", "Cadillac", "sand"],
+	["Fernando Alonso", "Aston Martin", "green"], ["Lance Stroll", "Aston Martin", "green"], ["Valtteri Bottas", "Cadillac", "sand"],
+	["Oliver Bearman", "Haas", "silver"]
 ];
 const qualifyingLapTimes = {
-	q1: ["1:30.939", "1:31.206", "1:32.229", "1:32.121", "1:32.085", "1:31.693", "1:32.059", "1:33.030", "1:32.092", "1:33.150", "1:31.666", "1:32.251", "1:32.809", "1:32.306", "1:32.959", "1:31.238", "1:33.327", "1:33.449", "1:33.653", "1:33.774", "1:34.509", "1:41.564"],
-	q2: ["1:29.207", "1:26.745", "1:29.302", "1:28.082", "1:27.049", "1:28.361", "1:27.218", "1:29.130", "1:29.072", "1:28.918", "1:30.001", "1:30.369", "1:31.515", "1:31.687", "1:31.785", null],
-	q3: ["1:27.470", "1:27.674", "1:28.095", "1:28.289", "1:28.321", "1:28.668", "1:28.763", "1:29.831", "1:30.311", "1:30.456"]
+	q1: ["1:34.684", "1:35.264", "1:34.664", "1:35.109", "1:35.413", "1:35.456", "1:35.491", "1:35.489", "1:35.718", "1:35.930", "1:35.040", "1:35.743", "1:35.710", "1:35.588", "1:36.149", "1:35.856", "1:36.220", "1:37.383", "1:37.400", "1:37.550", "1:37.601", "1:48.005"],
+	q2: ["1:35.086", "1:34.394", "1:34.617", "1:34.766", "1:35.064", "1:34.963", "1:34.763", "1:35.048", "1:34.559", "1:34.982", "1:35.197", "1:35.253", "1:35.460", "1:35.641", "1:35.993", "1:36.125", null, null, null, null, null, null],
+	q3: ["1:33.893", "1:34.151", "1:34.224", "1:34.244", "1:34.592", "1:34.668", "1:34.899", "1:35.090", "1:35.105", "1:35.314"]
 };
 const qualifyingResults = qualifyingRows.map(([name, team, color], index) => ({
 	position: index + 1,
@@ -50,36 +50,28 @@ const qualifyingResults = qualifyingRows.map(([name, team, color], index) => ({
 }));
 
 const sprintResults = [
-	["Max Verstappen", "Red Bull Racing", "blue"], ["Lewis Hamilton", "Ferrari", "red"], ["Charles Leclerc", "Ferrari", "red"],
-	["Kimi Antonelli", "Mercedes", "teal"], ["Liam Lawson", "Racing Bulls", "periwinkle"], ["Oliver Bearman", "Haas", "silver"],
-	["Nico Hülkenberg", "Audi", "orange"], ["Lando Norris", "McLaren", "papaya"], ["Pierre Gasly", "Alpine", "pink"],
-	["Esteban Ocon", "Haas", "silver"], ["Fernando Alonso", "Aston Martin", "green"], ["Carlos Sainz", "Williams", "blue2"],
-	["Arvid Lindblad", "Racing Bulls", "periwinkle"], ["Oscar Piastri", "McLaren", "papaya"], ["Alexander Albon", "Williams", "blue2"],
-	["Gabriel Bortoleto", "Audi", "orange"], ["Valtteri Bottas", "Cadillac", "sand"], ["Isack Hadjar", "Red Bull Racing", "blue"],
-	["Franco Colapinto", "Alpine", "pink"], ["George Russell", "Mercedes", "teal"], ["Sergio Pérez", "Cadillac", "sand"],
-	["Lance Stroll", "Aston Martin", "green"]
 ].map(([name, team, color], index) => ({ position: index + 1, name, team, color }));
 
 const driverStandings = [
-	["Kimi Antonelli", "Mercedes", "teal", 400], ["Max Verstappen", "Red Bull", "blue", 297],
-	["George Russell", "Mercedes", "teal", 274], ["Lando Norris", "McLaren", "papaya", 271],
-	["Lewis Hamilton", "Ferrari", "red", 263], ["Charles Leclerc", "Ferrari", "red", 255],
-	["Oscar Piastri", "McLaren", "papaya", 160], ["Isack Hadjar", "Red Bull", "blue", 137],
-	["Liam Lawson", "Racing Bulls", "periwinkle", 93], ["Pierre Gasly", "Alpine", "pink", 42],
-	["Arvid Lindblad", "Racing Bulls", "periwinkle", 38], ["Franco Colapinto", "Alpine", "pink", 27],
-	["Oliver Bearman", "Haas", "silver", 23], ["Nico Hülkenberg", "Audi", "orange", 15],
-	["Gabriel Bortoleto", "Audi", "orange", 14], ["Esteban Ocon", "Haas", "silver", 7],
-	["Fernando Alonso", "Aston Martin", "green", 7], ["Carlos Sainz", "Williams", "blue2", 7],
+	["Kimi Antonelli", "Mercedes", "teal", 402], ["Max Verstappen", "Red Bull Racing", "blue", 304],
+	["Lewis Hamilton", "Ferrari", "red", 267], ["George Russell", "Mercedes", "teal", 264],
+	["Lando Norris", "McLaren", "papaya", 264], ["Charles Leclerc", "Ferrari", "red", 250],
+	["Oscar Piastri", "McLaren", "papaya", 167], ["Isack Hadjar", "Red Bull Racing", "blue", 122],
+	["Liam Lawson", "Racing Bulls", "periwinkle", 89], ["Pierre Gasly", "Alpine", "pink", 52],
+	["Arvid Lindblad", "Racing Bulls", "periwinkle", 38], ["Franco Colapinto", "Alpine", "pink", 35],
+	["Oliver Bearman", "Haas", "silver", 23], ["Gabriel Bortoleto", "Audi", "orange", 14],
+	["Nico Hülkenberg", "Audi", "orange", 14], ["Carlos Sainz", "Williams", "blue2", 11],
+	["Esteban Ocon", "Haas", "silver", 7], ["Fernando Alonso", "Aston Martin", "green", 7],
 	["Alexander Albon", "Williams", "blue2", 5], ["Yuki Tsunoda", "Racing Bulls", "periwinkle", 1],
-	["Ryo Hirakawa", "Haas", "silver", 1], ["Rafael Camara", "Haas", "silver", 0],
-	["Lance Stroll", "Aston Martin", "green", 0], ["Valtteri Bottas", "Cadillac", "sand", 0],
-	["Sergio Pérez", "Cadillac", "sand", 0]
+	["Ryo Hirakawa", "Haas", "silver", 1], ["Lance Stroll", "Aston Martin", "green", 0],
+	["Valtteri Bottas", "Cadillac", "sand", 0], ["Sergio Pérez", "Cadillac", "sand", 0],
+	["Rafael Camara", "Haas", "silver", 0]
 ].map(([name, team, color, points], index) => ({ position: index + 1, name, team, color, points }));
 
 const constructorStandings = [
-	["Mercedes", "teal", 674], ["Ferrari", "red", 518], ["Red Bull", "blue", 448],
-	["McLaren", "papaya", 431], ["Racing Bulls", "periwinkle", 118], ["Alpine", "pink", 69],
-	["Haas", "silver", 31], ["Audi", "orange", 29], ["Williams", "blue2", 12],
+	["Mercedes", "teal", 666], ["Ferrari", "red", 517], ["Red Bull Racing", "blue", 440],
+	["McLaren", "papaya", 431], ["Racing Bulls", "periwinkle", 114], ["Alpine", "pink", 87],
+	["Haas", "silver", 31], ["Audi", "orange", 28], ["Williams", "blue2", 16],
 	["Aston Martin", "green", 7], ["Cadillac", "sand", 0]
 ].map(([name, color, points], index) => ({ position: index + 1, name, color, points }));
 
@@ -112,8 +104,8 @@ document.querySelectorAll(".extras details").forEach((details) => {
 	const isQualifying = summary.textContent.includes("Kvalifikácia");
 	const rows = isQualifying ? qualifyingResults : sprintResults;
 	summary.innerHTML = isQualifying
-		? "Kvalifikácia · São Paulo <span>07.11.2026 · OFICIÁLNE ČASY</span>"
-		: "Posledný šprint · Singapur <span>10.10.2026 · 22 JAZDCOV</span>";
+		? "Kvalifikácia · Las Vegas <span>20.11.2026 · OFICIÁLNE ČASY</span>"
+		: "Šprint <span>21.11.2026 · NA TOMTO VÍKENDE NEPREBEHOL</span>";
 	const table = details.querySelector("table");
 	if (table) table.outerHTML = isQualifying ? qualifyingTable(rows) : sessionTable(rows);
 });
@@ -140,27 +132,27 @@ if (standingsTables[1]) {
 	standingsTables[1].querySelector("tbody").innerHTML = constructorStandings.map(({ position, name, color, points }) => `<tr><td class="rank${position === 1 ? " winner" : ""}">${formattedPosition(position)}</td><td><i class="dot ${color}"></i> ${name}</td><td class="num points">${points}</td><td class="num">${position === 1 ? "—" : `− ${constructorStandings[0].points - points}`}</td></tr>`).join("");
 }
 
-document.querySelectorAll(".demo").forEach((label) => { label.textContent = "AKTUALIZOVANÉ · 09.11.2026"; });
+document.querySelectorAll(".demo").forEach((label) => { label.textContent = "AKTUALIZOVANÉ · 23.11.2026"; });
 const home = document.querySelector("main.page:not(.results-page)");
 if (home) {
 	const season = home.querySelector(".kicker > span:first-child");
 	if (season) season.textContent = "SEZÓNA 2026";
 	const featureTitle = home.querySelector(".feature-heading h2");
-	if (featureTitle) featureTitle.textContent = "TOP 5 · Veľká cena São Paula";
+	if (featureTitle) featureTitle.textContent = "TOP 5 · Veľká cena Las Vegas";
 	const featureEyebrow = home.querySelector(".feature-heading .eyebrow");
-	if (featureEyebrow) featureEyebrow.textContent = "FORMULA 1 GRANDE PRÊMIO DE SÃO PAULO · 08.11.2026";
+	if (featureEyebrow) featureEyebrow.textContent = "FORMULA 1 HEINEKEN LAS VEGAS GRAND PRIX · 21.11.2026";
 	const raceName = home.querySelector(".featured-results .race-meta strong");
-	if (raceName) raceName.textContent = "VEĽKÁ CENA SÃO PAULA 2026";
+	if (raceName) raceName.textContent = "VEĽKÁ CENA LAS VEGAS 2026";
 	const circuit = home.querySelector(".featured-results .race-meta span");
-	if (circuit) circuit.textContent = "Autódromo José Carlos Pace · Interlagos · 71 kôl";
+	if (circuit) circuit.textContent = "Las Vegas Strip Circuit · Las Vegas · 50 kôl";
 	const featureList = home.querySelector(".feature-list");
 	if (featureList) featureList.innerHTML = raceResults.slice(0, 5).map(({ position, name, team, gap }) => `<li><b>${formattedPosition(position)}</b><span><strong>${name}</strong><small>${team}</small></span><time>${gap}</time></li>`).join("");
 	const winner = home.querySelector(".winner-note");
-	if (winner) winner.textContent = "NAJRÝCHLEJŠIE KOLO: KIMI ANTONELLI · 1:12.689";
+	if (winner) winner.textContent = "VÍŤAZ PRETEKOV: MAX VERSTAPPEN";
 	const haas = [...home.querySelectorAll(".team-grid article")].find((item) => item.querySelector("h3")?.textContent === "Haas");
 	if (haas) haas.querySelector("p").innerHTML = "Rafael Camara <span>CAM</span>";
 	const raceNote = home.querySelector("#vysledky .note");
-	if (raceNote) raceNote.innerHTML = 'VC São Paula · 8. 11. 2026. Šprint sa na tomto víkende nekonal; zobrazený je posledný šprint sezóny v Singapure. Kvalifikačné časy: <a href="https://www.formula1.com/en/results/2026/races/1299/brazil/qualifying" target="_blank" rel="noopener noreferrer">oficiálna klasifikácia F1</a>.';
+	if (raceNote) raceNote.innerHTML = 'VC Las Vegas · 21. 11. 2026. Šprint sa na tomto víkende nekonal. Najrýchlejšie kolo: Liam Lawson · 1:35.591. <a href="https://www.formula1.com/en/results/2026/races/1300/las-vegas/race-result" target="_blank" rel="noopener noreferrer">oficiálna klasifikácia F1</a>.';
 }
 
 const photoCarousel = document.querySelector(".feature-photo");
@@ -201,7 +193,19 @@ if (photoCarousel) {
 }
 
 const standingsNote = document.querySelector("#bodovanie .note");
-if (standingsNote) standingsNote.textContent = "Poradie po VC São Paula. Sezónny súčet zahŕňa aj jazdcov, ktorí počas roka zaskakovali.";
+if (standingsNote) standingsNote.textContent = "Poradie po VC Las Vegas. Sezónny súčet zahŕňa aj jazdcov, ktorí počas roka zaskakovali.";
+
+document.querySelectorAll(".next-race").forEach((card) => {
+	const label = card.querySelector("p");
+	const title = card.querySelector("h3");
+	const date = card.querySelector("time");
+	if (label) label.innerHTML = 'Ďalšia Veľká cena <span>KOLO 22</span>';
+	if (title) title.textContent = "Veľká cena Kataru";
+	if (date) {
+		date.dateTime = "2026-11-29";
+		date.textContent = "27.–29. november 2026";
+	}
+});
 
 const sessionSwitch = document.querySelector(".session-switch");
 if (sessionSwitch) {
@@ -241,20 +245,20 @@ document.querySelectorAll(".team-grid article").forEach((team) => {
 	}
 });
 const teamsNote = document.querySelector("#timy .note");
-if (teamsNote) teamsNote.textContent = "Zostavy podľa štartového poľa VC São Paula 2026.";
+if (teamsNote) teamsNote.textContent = "Zostavy podľa štartového poľa VC Las Vegas 2026.";
 
 const resultsPage = document.querySelector("main.results-page");
 if (resultsPage) {
 	const kicker = resultsPage.querySelector(".kicker > span:first-child");
-	if (kicker) kicker.textContent = "SÃO PAULO / 08.11.2026";
+	if (kicker) kicker.textContent = "LAS VEGAS / 21.11.2026";
 	const intro = resultsPage.querySelector(".page-intro > p");
-	if (intro) intro.textContent = "Veľká cena São Paula · Interlagos. Kvalifikácia z 7. novembra a posledný šprint sezóny.";
+	if (intro) intro.textContent = "Veľká cena Las Vegas · Las Vegas Strip Circuit. Kvalifikácia z 20. novembra; šprint sa nekonal.";
 	const raceTitle = resultsPage.querySelector("#race-title");
-	if (raceTitle) raceTitle.textContent = "Veľká cena São Paula";
+	if (raceTitle) raceTitle.textContent = "Veľká cena Las Vegas";
 	const raceMeta = resultsPage.querySelector(".results-meta");
-	if (raceMeta) raceMeta.innerHTML = "<strong>VEĽKÁ CENA SÃO PAULA 2026</strong><span>Autódromo José Carlos Pace · Interlagos · 8. 11. 2026</span>";
+	if (raceMeta) raceMeta.innerHTML = "<strong>VEĽKÁ CENA LAS VEGAS 2026</strong><span>Las Vegas Strip Circuit · Las Vegas · 21. 11. 2026</span>";
 	const sessionHeading = resultsPage.querySelector(".ruled .section-head h2");
-	if (sessionHeading) sessionHeading.textContent = "Kvalifikácia a posledný šprint";
+	if (sessionHeading) sessionHeading.textContent = "Kvalifikácia";
 	const note = resultsPage.querySelector(".note");
-	if (note) note.innerHTML = 'Kvalifikačné časy: <a href="https://www.formula1.com/en/results/2026/races/1299/brazil/qualifying" target="_blank" rel="noopener noreferrer">oficiálna klasifikácia F1</a>. Šampionát: Jolpica (po 20. kole, doplnený o body zo São Paula). Aktualizované 9. 11. 2026.';
+	if (note) note.innerHTML = 'Kvalifikačné časy: <a href="https://www.formula1.com/en/results/2026/races/1300/las-vegas/qualifying" target="_blank" rel="noopener noreferrer">oficiálna klasifikácia F1</a>. Šprint sa na tomto víkende nekonal. Aktualizované 23. 11. 2026.';
 }
