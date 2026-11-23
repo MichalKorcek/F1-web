@@ -84,6 +84,20 @@ const constructorStandings = [
 ].map(([name, color, points], index) => ({ position: index + 1, name, color, points }));
 
 const formattedPosition = (position) => String(position).padStart(2, "0");
+const teamCode = (team) => ({
+	Mercedes: "MER",
+	Ferrari: "FER",
+	"Red Bull": "RBR",
+	"Red Bull Racing": "RBR",
+	McLaren: "MCL",
+	"Racing Bulls": "RB",
+	Alpine: "ALP",
+	Haas: "HAS",
+	Audi: "AUD",
+	Williams: "WIL",
+	"Aston Martin": "AMR",
+	Cadillac: "CAD"
+}[team] ?? team.slice(0, 3).toUpperCase());
 const raceRow = ({ position, name, code, team, color, gap, points }) => `<tr><td class="rank${position === 1 ? " winner" : ""}">${formattedPosition(position)}</td><td><b>${name}</b><small class="code">${code}</small></td><td><i class="dot ${color}"></i> ${team}</td><td>${gap}</td><td class="num points">${points}</td></tr>`;
 const sessionTable = (rows) => `<table class="session-table"><thead><tr><th>POS.</th><th>JAZDEC</th><th>TÍM</th></tr></thead><tbody>${rows.map(({ position, name, team, color }) => `<tr><td class="rank${position === 1 ? " winner" : ""}">${formattedPosition(position)}</td><td><b>${name}</b></td><td><i class="dot ${color}"></i> ${team}</td></tr>`).join("")}</tbody></table>`;
 const qualifyingTable = (rows) => `<table class="session-table qualification-table"><thead><tr><th>POS.</th><th>JAZDEC</th><th>TÍM</th><th class="num">Q1</th><th class="num">Q2</th><th class="num">Q3</th><th>STAV</th></tr></thead><tbody>${rows.map(({ position, name, team, color, q1, q2, q3, status }) => `<tr><td class="rank${position === 1 ? " winner" : ""}">${formattedPosition(position)}</td><td><b>${name}</b></td><td><i class="dot ${color}"></i> ${team}</td><td class="num">${q1}</td><td class="num">${q2}</td><td class="num">${q3}</td><td><span class="qualification-status${position > 10 ? " eliminated" : ""}">${status}</span></td></tr>`).join("")}</tbody></table>`;
@@ -106,7 +120,21 @@ document.querySelectorAll(".extras details").forEach((details) => {
 
 const standingsTables = document.querySelectorAll("#bodovanie table.compact");
 if (standingsTables[0]) {
-	standingsTables[0].querySelector("tbody").innerHTML = driverStandings.map(({ position, name, color, points }) => `<tr><td class="rank${position === 1 ? " winner" : ""}">${formattedPosition(position)}</td><td><b>${name}</b></td><td><i class="dot ${color}"></i></td><td class="num points">${points}</td></tr>`).join("");
+	standingsTables[0].querySelector("tbody").innerHTML = driverStandings.map(({ position, name, team, color, points }) => `<tr${position > 10 ? ' class="standings-extra"' : ""}><td class="rank${position === 1 ? " winner" : ""}">${formattedPosition(position)}</td><td><b>${name}</b></td><td><i class="dot ${color}"></i><span class="team-code">${teamCode(team)}</span></td><td class="num points">${points}</td></tr>`).join("");
+	const standingsWrap = standingsTables[0].closest(".table-scroll");
+	if (standingsWrap) {
+		const toggle = document.createElement("button");
+		toggle.type = "button";
+		toggle.className = "standings-toggle";
+		toggle.textContent = `Zobraziť všetkých ${driverStandings.length} jazdcov`;
+		toggle.setAttribute("aria-expanded", "false");
+		toggle.addEventListener("click", () => {
+			const expanded = standingsTables[0].classList.toggle("standings-expanded");
+			toggle.setAttribute("aria-expanded", String(expanded));
+			toggle.textContent = expanded ? "Zobraziť TOP 10" : `Zobraziť všetkých ${driverStandings.length} jazdcov`;
+		});
+		standingsWrap.insertAdjacentElement("afterend", toggle);
+	}
 }
 if (standingsTables[1]) {
 	standingsTables[1].querySelector("tbody").innerHTML = constructorStandings.map(({ position, name, color, points }) => `<tr><td class="rank${position === 1 ? " winner" : ""}">${formattedPosition(position)}</td><td><i class="dot ${color}"></i> ${name}</td><td class="num points">${points}</td><td class="num">${position === 1 ? "—" : `− ${constructorStandings[0].points - points}`}</td></tr>`).join("");
